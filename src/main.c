@@ -5,6 +5,8 @@
 const int WINDOW_WIDTH = 800;
 const int WINDOW_HEIGHT = 800;
 
+static char* startFEN = "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR";
+
 int main() {
 
     if (SDL_Init(SDL_INIT_VIDEO) < 0) {
@@ -36,6 +38,7 @@ int main() {
         printf("board failed to initalize");
     }
 
+    board_loadPositionFromFEN(startFEN);
     // Event loop flag
     int running = 1;
     SDL_Event event;
